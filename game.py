@@ -55,13 +55,13 @@ while running:
             running = False
 
         elif event.type == pg.KEYDOWN:
-            if event.key == pg.K_LEFT:
+            if event.key == pg.K_a:
                 direction = "left"
-            elif event.key == pg.K_RIGHT:
+            elif event.key == pg.K_d:
                 direction = "right"
-            elif event.key == pg.K_UP:
+            elif event.key == pg.K_w:
                 direction = "up"
-            elif event.key == pg.K_DOWN:
+            elif event.key == pg.K_s:
                 direction = "down"
             elif event.key == pg.K_ESCAPE:
                 running = False
@@ -84,6 +84,8 @@ while running:
             top = r*32
             if tile == "#":
                 pg.draw.rect(screen, (20,20,220), pg.Rect(left+1, top+1, 30,30), 1)
+            #if tile == ".":
+               # pg.draw.circle(screen,)
 
 
 
