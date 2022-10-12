@@ -5,8 +5,13 @@ import pygame as pg
 
 ## Screen setup ##
 pg.init()
-screen = pg.display.set_mode((600,800))
+screen = pg.display.set_mode((353,480))
 pg.display.set_caption("Pac-Man (clone)")
+
+##Sound
+pg.mixer.pre_init(44100,32,2,1024)
+pg.mixer.init()
+pg.mixer.music.load("lærke.wav")
 
 
 
@@ -63,8 +68,15 @@ while running:
                 direction = "up"
             elif event.key == pg.K_s:
                 direction = "down"
+            elif event.key == pg.K_m:
+                if pg.mixer.music.get_busy():
+                    pg.mixer.music.stop()
+                else:
+                    pg.mixer.music.play()
+            
             elif event.key == pg.K_ESCAPE:
                 running = False
+            
 
     # Move
     if direction == "left":
